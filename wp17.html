@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String and Math Functions</title>
+
+    <script>
+        function stringFunctions() {
+            let str = document.getElementById("userString").value;
+
+            document.getElementById("stringOutput").innerHTML =
+                "Original String: " + str + "<br>" +
+                "Length: " + str.length + "<br>" +
+                "Uppercase: " + str.toUpperCase() + "<br>" +
+                "Lowercase: " + str.toLowerCase() + "<br>" +
+                "First Character: " + str.charAt(0) + "<br>" +
+                "Substring: " + str.substring(0, 5) + "<br>" +
+                "Position of 'a': " + str.indexOf("a");
+        }
+
+        function mathFunctions() {
+            let num = Number(document.getElementById("userNumber").value);
+
+            document.getElementById("mathOutput").innerHTML =
+                "Number: " + num + "<br>" +
+                "Square Root: " + Math.sqrt(num) + "<br>" +
+                "Round: " + Math.round(num) + "<br>" +
+                "Ceil: " + Math.ceil(num) + "<br>" +
+                "Floor: " + Math.floor(num) + "<br>" +
+                "Power (number²): " + Math.pow(num, 2) + "<br>" +
+                "Absolute Value: " + Math.abs(num) + "<br>" +
+                "Maximum of number and 100: " + Math.max(num, 100) + "<br>" +
+                "Minimum of number and 100: " + Math.min(num, 100);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>String and Math Object Functions</h1>
+
+    <h2>String Functions</h2>
+
+    <label>Enter a String:</label>
+    <input type="text" id="userString">
+
+    <br><br>
+
+    <button onclick="stringFunctions()">Show String Functions</button>
+
+    <p id="stringOutput"></p>
+
+    <hr>
+
+    <h2>Math Functions</h2>
+
+    <label>Enter a Number:</label>
+    <input type="number" id="userNumber">
+
+    <br><br>
+
+    <button onclick="mathFunctions()">Show Math Functions</button>
+
+    <p id="mathOutput"></p>
+
+</body>
+</html>
+
