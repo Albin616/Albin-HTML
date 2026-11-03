@@ -1,0 +1,20 @@
+<html> <body>
+
+<h2>Mouse Event Handling</h2>
+
+<p id="content">Move the mouse over this text to see a new image and message.</p>
+
+<img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW2p5qg13J_tBY7pJu81Cgw_C81FdF4LeAH8246Hwhdw&s=10" width="400" height="400">
+
+<p id="message"></p>
+
+<script> 
+let content = document.getElementById("content"); 
+content.addEventListener("mouseover", function() { 
+document.getElementById("image").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzlVifCwnzTU-PtWbmUZReN5hV_a7w-2bRzq3A9mo36Q&s=10";
+document.getElementById("message").innerHTML = "Welcome! A new image is displayed."; }); 
+content.addEventListener("mouseout", function() { 
+document.getElementById("image").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW2p5qg13J_tBY7pJu81Cgw_C81FdF4LeAH8246Hwhdw&s=10"; 
+document.getElementById("message").innerHTML = ""; }); </script>
+
+</body> </html>

@@ -1,0 +1,36 @@
+<html> <body>
+
+<h2>Calendar Generator</h2>
+
+Enter Year: <input type="number" id="year"><br><br>
+
+Enter Month (1-12): <input type="number" id="month"><br><br>
+
+<button onclick="generate()">Generate Calendar</button>
+
+<h3 id="heading"></h3>
+
+<div id="result"></div>
+
+<script> function generate() { let y = document.getElementById("year").value; 
+let m = document.getElementById("month").value; 
+if(y == "" || m == "" || m < 1 || m > 12) 
+{ 
+ alert("Enter valid year and month"); 
+ return; } 
+ let first = new Date(y, m-1, 1).getDay(); 
+ let days = new Date(y, m, 0).getDate(); 
+ let cal = "<table border='1' cellpadding='10'>"; 
+ cal += "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>"; 
+ let d = 1; for(let i = 0; i < 6; i++) { 
+ cal += "<tr>"; 
+ for(let j = 0; j < 7; j++) { 
+ if(i == 0 && j < first || d > days) 
+ { 
+ cal += "<td></td>"; } 
+ else { cal += "<td>" + d + "</td>"; d++; } } cal += "</tr>";
+  if(d > days) 
+  { break; } } cal += "</table>"; document.getElementById("heading").innerHTML = "Calendar: " + m + "/" + y;    
+  document.getElementById("result").innerHTML = cal; } </script>
+
+</body> </html>

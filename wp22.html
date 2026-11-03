@@ -1,0 +1,23 @@
+<html> <body>
+
+<h2>Online Football Exam</h2>
+
+How many players are there in a football team?<br>
+
+<input type="radio" name="q1" value="a"> 9<br> <input type="radio" name="q1" value="b"> 11<br> <input type="radio" name="q1" value="c"> 12<br><br>
+
+Which country won the 2022 FIFA World Cup?<br>
+
+<input type="radio" name="q2" value="a"> Brazil<br> <input type="radio" name="q2" value="b"> France<br> <input type="radio" name="q2" value="c"> Argentina<br><br>
+
+Who is known as the King of Football?<br>
+
+<input type="radio" name="q3" value="a"> Pele<br> <input type="radio" name="q3" value="b"> Messi<br> <input type="radio" name="q3" value="c"> Ronaldo<br><br>
+
+<button onclick="check()">Submit</button>
+
+<h3 id="result"></h3>
+
+<script> function check() { let score = 0; let q1 = document.querySelector('input[name="q1"]:checked'); let q2 = document.querySelector('input[name="q2"]:checked'); let q3 = document.querySelector('input[name="q3"]:checked'); if(q1 && q1.value == "b") { score++; } if(q2 && q2.value == "c") { score++; } if(q3 && q3.value == "a") { score++; } document.getElementById("result").innerHTML = "Your Score: " + score + "/3"; } </script>
+
+</body> </html>
